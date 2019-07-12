@@ -1,0 +1,36 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar-header span {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.navbar {
+    background: #ecf0f1;
+    height: 70px;
+}
+
+.navbar-header a:hover {
+    /* color: rgb(131,58,180) !important; */
+    color: #6b6b6b !important;
+}
+
+nav li a {
+    color: #000;
+}
+
+nav li a:hover {
+    color: #6b6b6b !important;
+}
+
+nav li {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    nav li {
+        padding-bottom: 10px;
+    }
+}
