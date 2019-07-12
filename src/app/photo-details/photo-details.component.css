@@ -1,0 +1,7 @@
+.well {
+    pointer-events: none;
+}
+
+.container {
+    padding-top: 50px;
+}

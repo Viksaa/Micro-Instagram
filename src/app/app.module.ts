@@ -8,13 +8,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { appRoutes } from './routes';
 import { PhotosListComponent } from './photos-list/photos-list.component';
 import { PhotoThumbnailComponent } from './photo-thumbnail/photo-thumbnail.component';
+import { PhotoDetailsComponent } from './photo-details/photo-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PhotosListComponent,
-    PhotoThumbnailComponent
+    PhotoThumbnailComponent,
+    PhotoDetailsComponent
   ],
   imports: [
       BrowserModule,

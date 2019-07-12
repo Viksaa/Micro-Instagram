@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="well">
+        <div class="row text-center">
+            <div class="col">
+                <img [src]="photo?.url" [alt]="photo?.name" class="img-fluid" />
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div><strong>Title: </strong>{{ photo?.title }}</div>
+                <div><strong>URL: </strong>{{ photo?.url }}</div>
+                <div><strong>Thumbnail URL: </strong>{{ photo?.thumbnailUrl }}</div>
+            </div>
+            <div class="col-md-6">
+                <div><strong>Album ID: </strong>{{ photo?.albumId }}</div>
+                <div><strong>Photo ID: </strong>{{ photo?.id }}</div>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+            <div class="col text-center">
+                <span class="pr-5">
+                    <button class="btn btn-success">Edit Photo</button>
+                </span>
+                <span>
+                    <button class="btn btn-danger">Delete Photo</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
