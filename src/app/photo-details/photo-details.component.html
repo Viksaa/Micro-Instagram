@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="well">
+    <div class="back">
         <div class="row text-center">
             <div class="col">
                 <img [src]="photo?.url" [alt]="photo?.name" class="img-fluid" />
@@ -23,7 +23,7 @@
                     <button class="btn btn-secondary">Edit Photo</button>
                 </span>
                 <span>
-                    <button class="btn btn-danger">Delete Photo</button>
+                    <button class="btn btn-danger" (click)="deletePhoto(photo?.id)">Delete Photo</button>
                 </span>
             </div>
         </div>

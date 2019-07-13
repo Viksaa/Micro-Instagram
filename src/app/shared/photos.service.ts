@@ -29,6 +29,12 @@ export class PhotosService {
             .pipe(catchError(this.handleError<IPhoto>('uploadPhoto')));
     }
 
+    deletePhoto(id: number) {
+        const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+        return this.http.delete(this.url + '/' + id, options)
+            .pipe(catchError(this.handleError<IPhoto>('deletePhoto')));
+    }
+
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
             console.error(error);
