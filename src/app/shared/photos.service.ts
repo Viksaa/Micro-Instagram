@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
 import { IPhoto } from './photo.model';
@@ -21,6 +21,12 @@ export class PhotosService {
     getPhoto(id: number): Observable<IPhoto> {
         return this.http.get<IPhoto>(this.url + '/' + id)
             .pipe(catchError(this.handleError<IPhoto>('getPhoto')));
+    }
+
+    uploadPhoto(photo) {
+        const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+        return this.http.post<IPhoto>(this.url, photo, options)
+            .pipe(catchError(this.handleError<IPhoto>('uploadPhoto')));
     }
 
     private handleError<T>(operation = 'operation', result?: T) {

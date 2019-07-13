@@ -1,0 +1,82 @@
+<div class="container back">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form #newPhotoForm="ngForm" (ngSubmit)="uploadPhoto(newPhotoForm.value)" autocomplete="off" novalidate>
+                <div class="form-group">
+                    <label for="albumId">Album ID</label>
+                    <em *ngIf="newPhotoForm.controls.albumId?.invalid && newPhotoForm.controls.albumId?.touched">Required</em>
+                    <input
+                        type="number"
+                        id="albumId"
+                        class="form-control"
+                        placeholder="Album id..."
+                        (ngModel)="(photoForm.albumId)"
+                        name="albumId"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <em *ngIf="newPhotoForm.controls.id?.invalid && newPhotoForm.controls.id?.touched">Required</em>
+                    <input
+                        type="number"
+                        id="id"
+                        class="form-control"
+                        placeholder="Id..."
+                        (ngModel)="(photoForm.id)"
+                        name="id"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <em *ngIf="newPhotoForm.controls.title?.invalid && newPhotoForm.controls.title?.touched">Required</em>
+                    <input
+                        type="text"
+                        id="title"
+                        class="form-control"
+                        placeholder="Title..."
+                        (ngModel)="(photoForm.title)"
+                        name="title"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <em *ngIf="newPhotoForm.controls.url?.invalid && newPhotoForm.controls.url?.touched">Required</em>
+                    <input
+                        type="text"
+                        id="url"
+                        class="form-control"
+                        placeholder="Url..."
+                        (ngModel)="(photoForm.url)"
+                        name="url"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="thumbnailUrl">Thumbnail URL</label>
+                    <em *ngIf="newPhotoForm.controls.thumbnailUrl?.invalid && newPhotoForm.controls.thumbnailUrl?.touched">Required</em>
+                    <input
+                        type="text"
+                        id="thumbnailUrl"
+                        class="form-control"
+                        placeholder="Thumbnail url..."
+                        (ngModel)="(photoForm.thumbnailUrl)"
+                        name="thumbnailUrl"
+                        required
+                    >
+                </div>
+
+                <div class="form-group text-center mt-5">
+                    <button [disabled]="newPhotoForm.invalid" type="submit" class="btn btn-secondary" style="margin-right: 20px;">Upload</button>
+                    <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
