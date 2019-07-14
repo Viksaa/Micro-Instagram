@@ -47,4 +47,8 @@ export class EditPhotoComponent implements OnInit {
         });
     }
 
+    cancel() {
+        this.router.navigate(['/photos/', this.routeId]);
+    }
+
 }

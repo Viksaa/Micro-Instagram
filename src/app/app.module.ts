@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -12,6 +13,7 @@ import { PhotoThumbnailComponent } from './photo-thumbnail/photo-thumbnail.compo
 import { PhotoDetailsComponent } from './photo-details/photo-details.component';
 import { UploadPhotoComponent } from './upload-photo/upload-photo.component';
 import { EditPhotoComponent } from './photo-details/edit-photo/edit-photo.component';
+import { from } from 'rxjs';
 
 @NgModule({
     declarations: [
@@ -28,6 +30,7 @@ import { EditPhotoComponent } from './photo-details/edit-photo/edit-photo.compon
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
+        NgxPaginationModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [
