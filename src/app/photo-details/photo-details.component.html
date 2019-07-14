@@ -20,7 +20,7 @@
         <div class="row" style="padding-top: 20px;">
             <div class="col text-center">
                 <span class="pr-5">
-                    <button class="btn btn-secondary">Edit Photo</button>
+                    <button class="btn btn-secondary" [routerLink]="['/photos/edit', photo?.id]">Edit Photo</button>
                 </span>
                 <span>
                     <button class="btn btn-danger" (click)="deletePhoto(photo?.id)">Delete Photo</button>

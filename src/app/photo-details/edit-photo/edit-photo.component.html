@@ -1,0 +1,82 @@
+<div class="container back">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form *ngIf="editForm" [formGroup]="editForm" (ngSubmit)="editPhoto(editForm.value)" autocomplete="off" novalidate>
+                <div class="form-group">
+                    <label for="albumId">Album ID</label>
+                    <em *ngIf="editForm.controls.albumId?.invalid && editForm.controls.albumId?.touched">Required</em>
+                    <input
+                        type="number"
+                        id="albumId"
+                        class="form-control"
+                        placeholder="Album id..."
+                        formControlName="albumId"
+                        name="albumId"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <em *ngIf="editForm.controls.id?.invalid && editForm.controls.id?.touched">Required</em>
+                    <input
+                        type="number"
+                        id="id"
+                        class="form-control"
+                        placeholder="Id..."
+                        formControlName="id"
+                        name="id"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <em *ngIf="editForm.controls.title?.invalid && editForm.controls.title?.touched">Required</em>
+                    <input
+                        type="text"
+                        id="title"
+                        class="form-control"
+                        placeholder="Title..."
+                        formControlName="title"
+                        name="title"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <em *ngIf="editForm.controls.url?.invalid && editForm.controls.url?.touched">Required</em>
+                    <input
+                        type="text"
+                        id="url"
+                        class="form-control"
+                        placeholder="Url..."
+                        formControlName="url"
+                        name="url"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="thumbnailUrl">Thumbnail URL</label>
+                    <em *ngIf="editForm.controls.thumbnailUrl?.invalid && editForm.controls.thumbnailUrl?.touched">Required</em>
+                    <input
+                        type="text"
+                        id="thumbnailUrl"
+                        class="form-control"
+                        placeholder="Thumbnail url..."
+                        formControlName="thumbnailUrl"
+                        name="thumbnailUrl"
+                        required
+                    >
+                </div>
+
+                <div class="form-group text-center mt-5">
+                    <button [disabled]="editForm.invalid" type="submit" class="btn btn-secondary" style="margin-right: 20px;">Edit</button>
+                    <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

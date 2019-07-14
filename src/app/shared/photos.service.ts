@@ -10,6 +10,7 @@ import { IPhoto } from './photo.model';
 export class PhotosService {
 
     url = 'http://jsonplaceholder.typicode.com/photos';
+    options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
     constructor(private http: HttpClient) { }
 
@@ -24,15 +25,18 @@ export class PhotosService {
     }
 
     uploadPhoto(photo) {
-        const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-        return this.http.post<IPhoto>(this.url, photo, options)
+        return this.http.post<IPhoto>(this.url, photo, this.options)
             .pipe(catchError(this.handleError<IPhoto>('uploadPhoto')));
     }
 
     deletePhoto(id: number) {
-        const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-        return this.http.delete(this.url + '/' + id, options)
+        return this.http.delete(this.url + '/' + id, this.options)
             .pipe(catchError(this.handleError<IPhoto>('deletePhoto')));
+    }
+
+    editPhoto(id: number, photo: IPhoto) {
+        return this.http.put(this.url + '/' + id, photo, this.options)
+            .pipe(catchError(this.handleError<IPhoto>('editPhoto')));
     }
 
     private handleError<T>(operation = 'operation', result?: T) {
