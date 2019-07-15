@@ -29,6 +29,10 @@ nav li {
     padding-left: 20px;
 }
 
+.toggle-nav {
+    padding-top: 200px;
+}
+
 @media (max-width: 768px) {
     nav li {
         padding-bottom: 10px;
